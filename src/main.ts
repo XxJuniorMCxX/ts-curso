@@ -1,25 +1,36 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+//obteniendo elementos del DOM
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-  <h1>HOLA MUNDO</H1>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const $contadorDom = document.getElementById("contador") as HTMLSpanElement;
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const $boton = document.getElementById(  "btnContadorIncrementar") as HTMLButtonElement;
+
+const $boton1= document.getElementById("btnContadorDecrementar") as HTMLButtonElement;
+
+let contador = 0;
+
+const incrementarContador = (): void => {
+  contador += 1;
+
+  if ($contadorDom) {
+    $contadorDom.textContent = contador.toString();
+  }
+};
+
+if ($boton) {
+  $boton.addEventListener("click", incrementarContador);
+}
+
+// Agregando funcionalidad al botón de decrementar contador
+const decrementarContador = (): void => {
+  contador -= 1;
+
+  if ($contadorDom) {
+    $contadorDom.textContent = contador.toString();
+  }
+};
+
+if ($boton1) {
+  $boton1.addEventListener("click", decrementarContador);
+}
+
+

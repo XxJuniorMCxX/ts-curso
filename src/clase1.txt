@@ -1,0 +1,29 @@
+import './style.css'
+
+const age:number =20;
+const name:string = 'DREP';
+const isEstudiante:boolean = true;
+const x:null = null;
+const y:undefined = undefined;
+console.log(`Mi edad es ${age}`);
+
+const persona={
+  name: 'DREP',
+  age: 20,
+  isEstudiante: true,
+
+}
+
+function suma(num1:number){
+  return num1 + 10;
+}
+console.log(suma(10));
+
+console.log(persona,x,y);
+
+const numeros:number[] = [1,2,3,4,5];
+const numeros2:Array<number> = [1,2,3,4,5];
+const numeros3 = [1,2,3,4,5];
+const numeros4:Array<number | string> = [1,2,3,'4','5'];
+
+console.log(numeros,numeros2,numeros3,numeros4);
